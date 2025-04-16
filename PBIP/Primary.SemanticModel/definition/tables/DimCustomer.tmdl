@@ -1,0 +1,39 @@
+table DimCustomer
+
+	column CustomerKey
+		dataType: int64
+		sourceColumn: CustomerKey
+
+	column FirstName
+		dataType: string
+		sourceColumn: FirstName
+
+	column MiddleName
+		dataType: string
+		sourceColumn: MiddleName
+
+	column LastName
+		dataType: string
+		sourceColumn: LastName
+
+	column BirthDate
+		dataType: dateTime
+		sourceColumn: BirthDate
+
+	column MaritalStatus
+		dataType: string
+		sourceColumn: MaritalStatus
+
+	column Gender
+		dataType: string
+		sourceColumn: Gender
+
+
+    partition 'DimCustomer' = m
+        mode: import
+        source =
+            let
+                Source = Sql.Database("BOOK-PROIJR07F2", "AdventureWorksDW-PRD", [Query = "SELECT [CustomerKey] AS [CustomerKey], [FirstName] AS [FirstName], [MiddleName] AS [MiddleName], [LastName] AS [LastName], [BirthDate] AS [BirthDate], [MaritalStatus] AS [MaritalStatus], [Gender] AS [Gender] FROM [dbo].[DimCustomer]", CreateNavigationProperties=false])
+            in
+                Source
+    
