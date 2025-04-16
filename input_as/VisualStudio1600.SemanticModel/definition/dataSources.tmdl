@@ -1,5 +1,0 @@
-dataSource DemoSAP = provider
-	connectionString: Data Source=DESKTOP-7QLGMPF\LAINOBORGO;Initial Catalog=DemoSAP;Encrypt=true;trustServerCertificate=true;
-	impersonationMode: impersonateAccount
-	provider: System.Data.SqlClient
-
