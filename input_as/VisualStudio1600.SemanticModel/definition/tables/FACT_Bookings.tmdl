@@ -1,0 +1,109 @@
+/// Accounting Document Segment
+table FACT_Bookings
+
+	measure 'Sum of Amount_LC (FACT_Bookings)' = SUM('FACT_Bookings'[Amount_LC])
+		displayFolder: Measures
+
+	measure 'Sum of Quantity (FACT_Bookings)' = SUM('FACT_Bookings'[Quantity])
+		displayFolder: Measures
+
+	measure 'Sum of LC_tax (FACT_Bookings)' = SUM('FACT_Bookings'[LC_tax])
+		displayFolder: Measures
+
+	measure 'DistinctCount of Customer (FACT_Bookings)' = DISTINCTCOUNT('FACT_Bookings'[Customer])
+		displayFolder: Measures
+
+	measure 'DistinctCount of Vendor (FACT_Bookings)' = DISTINCTCOUNT('FACT_Bookings'[Vendor])
+		displayFolder: Measures
+
+	/// Amount in Local Currency
+	column Amount_LC
+		dataType: decimal
+		summarizeBy: none
+		sourceColumn: Amount_LC
+
+	/// ISNULL([T2].[SATZ_ID], 0)
+	column AccDocHeaders
+		dataType: int64
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: FK_BKPF
+
+	/// @SAPDate2ID([T2].[BLDAT])
+	column Doc__Date
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: FK_BLDAT
+
+	/// ISNULL([T1].[SATZ_ID], 0)
+	column AccDocSegments
+		dataType: int64
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: FK_BSEG
+
+	/// @SAPDate2ID([T2].[BUDAT])
+	column Pstng_Date
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: FK_BUDAT
+
+	/// ISNULL([T6].[SATZ_ID], 0)
+	column Customer
+		dataType: int64
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: FK_KNA1
+
+	/// ISNULL([T5].[SATZ_ID], 0)
+	column Vendor
+		dataType: int64
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: FK_LFA1
+
+	/// ISNULL([T4].[SATZ_ID], 0)
+	column Account
+		dataType: int64
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: FK_SKB1
+
+	/// Snapshot ID
+	column Snapshot
+		dataType: int64
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: FK_SNAPSHOT
+
+	/// ISNULL([T3].[SATZ_ID], 0)
+	column CompanyCodes
+		dataType: int64
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: FK_T001
+
+	/// ISNULL([T7].[SATZ_ID], 0)
+	column DocTypes
+		dataType: int64
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: KK_T003
+
+	/// Quantity
+	column Quantity
+		dataType: decimal
+		summarizeBy: none
+		sourceColumn: Quantity
+
+	/// Tax Amount in Local Currency
+	column LC_tax
+		dataType: decimal
+		summarizeBy: none
+		sourceColumn: VAT
+
+	partition FACT_BSEG = query
+		source
+			query = SELECT [Amount_LC], [FK_BKPF], [FK_BLDAT], [FK_BSEG], [FK_BUDAT], [FK_KNA1], [FK_LFA1], [FK_SKB1], [FK_SNAPSHOT], [FK_T001], [KK_T003], [Quantity], [VAT] FROM [STAR].[FACT_BSEG]
+			dataSource: DemoSAP
+

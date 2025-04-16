@@ -1,0 +1,504 @@
+/// Company Codes
+table CompanyCodes
+
+	/// Activate Account Assignment Derivation in Funds Management
+	column AA_Derivtn
+		dataType: string
+		summarizeBy: none
+		sourceColumn: AA_Derivtn
+
+	/// Indicator: Cash Management activated?
+	column Activate_CM
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Activate_CM
+
+	/// Address
+	column Address
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Address
+
+	/// Accounts Receivable Pledging Active
+	column AR_pledg
+		dataType: string
+		summarizeBy: none
+		sourceColumn: AR_pledg
+
+	/// Additional settings variant for bus.area financial statemnts
+	column BA_variant
+		dataType: string
+		summarizeBy: none
+		sourceColumn: BA_variant
+
+	/// Indicator: Business area financial statements required?
+	column Business_area_FS
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Business_area_FS
+
+	/// Indicator: Cash budget management active
+	column CBM_active
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CBM_active
+
+	/// Chart of Accounts
+	column Chrt_Accts
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Chrt_Accts
+
+	/// City
+	column City
+		dataType: string
+		summarizeBy: none
+		sourceColumn: City
+
+	/// Client
+	column Client
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Client
+
+	/// Cash Management and Forecast Company Code
+	column CM_co_code
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CM_co_code
+
+	/// Company
+	column Co
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Co
+
+	/// Allocation Indicator
+	column CoCd-_COA
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CoCd-_COA
+
+	/// Company Code
+	column CoCode
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CoCode
+
+	/// G/L account authorization check in contracts
+	column Contract
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Contract
+
+	/// Foreign trade: Import data copying control for GR
+	column Cop_ctrl
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Cop_ctrl
+
+	/// Cost of sales accounting status
+	column COS_status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: COS_status
+
+	/// Country Key
+	column Country
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Country
+
+	/// Credit control area
+	column CreditArea
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CreditArea
+
+	/// Chart of Accounts According to Country Legislation
+	column Cty_ch_act
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Cty_ch_act
+
+	/// Currency Key
+	column Currency
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Currency
+
+	/// T001: End of validity period
+	column CompanyCodes_ValidTo
+		dataType: dateTime
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: DAT_BIS_HIST
+
+	/// T001: Start of validity period
+	column CompanyCodes_ValidFrom
+		dataType: dateTime
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: DAT_VON_HIST
+
+	/// Indicator: Discount base amount is the net value
+	column DiscBaseNt
+		dataType: string
+		summarizeBy: none
+		sourceColumn: DiscBaseNt
+
+	/// Document Type for Journal Voucher (Amount Correction)
+	column Doc__Type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Doc__Type
+
+	/// Document Type for Provisions for Taxes on Services Received
+	column Doc__Type1
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Doc__Type1
+
+	/// Document Type for Journal Voucher (Tax Code Correction)
+	column Doc__Type2
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Doc__Type2
+
+	/// Indicator: Can credit control area be overwritten?
+	column Enter_control_area
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Enter_control_area
+
+	/// Indicator: Company code is in another system
+	column Ext_CoCde
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Ext_CoCde
+
+	/// Indicator: Extended withholding tax active
+	column Ext_w_tax
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Ext_w_tax
+
+	/// Funds center can be assigned to an account in HR from
+	column FdsCtrAct
+		dataType: string
+		summarizeBy: none
+		sourceColumn: FdsCtrAct
+
+	/// Indicator: Financial Assets Management active
+	column Fin_Asset_Man_active
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Fin_Asset_Man_active
+
+	/// Field Status Variant
+	column FldStVar
+		dataType: string
+		summarizeBy: none
+		sourceColumn: FldStVar
+
+	/// Financial Management Area
+	column FM_area
+		dataType: string
+		summarizeBy: none
+		sourceColumn: FM_area
+
+	/// Fiscal Year Variant
+	column FY_Variant
+		dataType: string
+		summarizeBy: none
+		sourceColumn: FY_Variant
+
+	/// Name of global company code
+	column Global_CC
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Global_CC
+
+	/// Indicator: hedge request active
+	column HedgeReq_active
+		dataType: string
+		summarizeBy: none
+		sourceColumn: HedgeReq_active
+
+	/// Foreign Trade: Import Data Control in MM Purchase Orders
+	column Imp__Data
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Imp__Data
+
+	/// Foreign Trade: Screen ctrl of imp.data f. MM-goods rececipt
+	column Imp_dataGR
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Imp_dataGR
+
+	/// Input Tax Code for Non-Taxable Transactions
+	column Input_tax_code
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Input_tax_code
+
+	/// G/L account authorization check in inventory management
+	column Inv__mgmt
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Inv__mgmt
+
+	/// Jurisdiction for tax calculation - tax jurisdiction code
+	column Jur__code
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Jur__code
+
+	/// Indicator: JVA Active
+	column JVA_Active
+		dataType: string
+		summarizeBy: none
+		sourceColumn: JVA_Active
+
+	/// Language Key
+	column Language
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Language
+
+	/// Maximum exchange rate deviation in percent
+	column Max_ex_dev
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Max_ex_dev
+
+	/// Inflation Method
+	column Method
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Method
+
+	/// Name of Company Code or Company
+	column Name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Name
+
+	/// Indicator: Negative Postings Permitted
+	column Negative_Postings_Permitted
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Negative_Postings_Permitted
+
+	/// Indicator: No ex.rate difference when clearing in local crcy
+	column No_forex_rate_diff__when_clearing_in_LC
+		dataType: string
+		summarizeBy: none
+		sourceColumn: No_forex_rate_diff__when_clearing_in_LC
+
+	/// Method for offsetting account determination
+	column Offst_acct
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Offst_acct
+
+	/// Original Key of the Company Code
+	column Original
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Original
+
+	/// Output Tax Code for Non-Taxable Transactions
+	column Output_tax_code
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Output_tax_code
+
+	/// G/L account authorization check in PO/scheduling agreement
+	column PO_sch_ag
+		dataType: string
+		summarizeBy: none
+		sourceColumn: PO_sch_ag
+
+	/// Manage Variant of Posting Period for Company Code/Ledger
+	column Post__Per
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Post__Per
+
+	/// Indicator: Post translations for exchange rate differences ?
+	column Post_translation
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Post_translation
+
+	/// G/L account authorization check in purchase requisitions
+	column PReq
+		dataType: string
+		summarizeBy: none
+		sourceColumn: PReq
+
+	/// Procedure for Setting the Posting Date
+	column Prk_pst_dt
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Prk_pst_dt
+
+	/// Indicator: Productive company code?
+	column Productive
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Productive
+
+	/// Indicator: Project Cash Management active?
+	column Project_CM_active
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Project_CM_active
+
+	/// Indicator: Propose fiscal year ?
+	column Propose_fiscal_year
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Propose_fiscal_year
+
+	/// Indicator: Propose current date as value date ?
+	column Propose_value_date
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Propose_value_date
+
+	/// Indicator: Purchase Account Processing is Active
+	column Purch_acct
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Purch_acct
+
+	/// Document Type for Remittance Challans
+	column RC_Doc_Typ
+		dataType: string
+		summarizeBy: none
+		sourceColumn: RC_Doc_Typ
+
+	/// Deferred Tax Rule
+	column Rule
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Rule
+
+	/// Rules for Copying from the Sample Account for G/L Accounts
+	column Rules_var
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Rules_var
+
+	/// ISNULL([T1].[SATZ_ID], 0)
+	column CompanyCodes
+		dataType: int64
+		isKey
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: SATZ_ID
+
+	/// Company Code Variant (Screen)
+	column Screen_var
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Screen_var
+
+	/// G/L account authorization check in shopping cart
+	column Shop_Cart
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Shop_Cart
+
+	/// Enable Amount Split
+	column Split
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Split
+
+	/// Funds reservation field status var.
+	column StatusVar
+		dataType: string
+		summarizeBy: none
+		sourceColumn: StatusVar
+
+	/// Surcharge Calculation Method
+	column Surcharges
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Surcharges
+
+	/// Tax Reporting Date Active in Documents
+	column Tax_Date
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tax_Date
+
+	/// Indicator: Document date as the basis for tax determination
+	column Tax_determ_with_doc_date
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tax_determ_with_doc_date
+
+	/// Sales/Purchases Tax Group
+	column Tax_grp
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tax_grp
+
+	/// Indicator: Base amount for tax is net of discount ?
+	column TaxBaseNet
+		dataType: string
+		summarizeBy: none
+		sourceColumn: TaxBaseNet
+
+	/// Foreign Currency Translation for Tax Items
+	column Tx_crcy_tr
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tx_crcy_tr
+
+	/// Indicator: Updating MM in Cash Mgmt/Forecast activated?
+	column Update_MM_in_CMF
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Update_MM_in_CMF
+
+	/// Indicator: Updating SD in Cash Mgmt/Forecast activated?
+	column Update_SD_in_CMF
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Update_SD_in_CMF
+
+	/// Activate Update in Funds Management
+	column UpdateType
+		dataType: string
+		summarizeBy: none
+		sourceColumn: UpdateType
+
+	/// Posting Period Variant
+	column Variant
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Variant
+
+	/// VAT Registration Number
+	column VAT_Reg_No
+		dataType: string
+		summarizeBy: none
+		sourceColumn: VAT_Reg_No
+
+	/// Workflow variant
+	column Workf_var
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Workf_var
+
+	partition DIM_T001 = query
+		source
+			query = SELECT [Client], [CoCode], [AA_Derivtn], [Activate_CM], [Address], [AR_pledg], [BA_variant], [Business_area_FS], [CBM_active], [Chrt_Accts], [City], [CM_co_code], [Co], [CoCd-_COA], [Contract], [Cop_ctrl], [COS_status], [Country], [CreditArea], [Cty_ch_act], [Currency], [DAT_BIS_HIST], [DAT_VON_HIST], [DiscBaseNt], [Doc__Type], [Doc__Type1], [Doc__Type2], [Enter_control_area], [Ext_CoCde], [Ext_w_tax], [FdsCtrAct], [Fin_Asset_Man_active], [FldStVar], [FM_area], [FY_Variant], [Global_CC], [HedgeReq_active], [Imp__Data], [Imp_dataGR], [Input_tax_code], [Inv__mgmt], [Jur__code], [JVA_Active], [Language], [Max_ex_dev], [Method], [Name], [Negative_Postings_Permitted], [No_forex_rate_diff__when_clearing_in_LC], [Offst_acct], [Original], [Output_tax_code], [PO_sch_ag], [Post__Per], [Post_translation], [PReq], [Prk_pst_dt], [Productive], [Project_CM_active], [Propose_fiscal_year], [Propose_value_date], [Purch_acct], [RC_Doc_Typ], [Rule], [Rules_var], [SATZ_ID], [Screen_var], [Shop_Cart], [Split], [StatusVar], [Surcharges], [Tax_Date], [Tax_determ_with_doc_date], [Tax_grp], [TaxBaseNet], [Tx_crcy_tr], [Update_MM_in_CMF], [Update_SD_in_CMF], [UpdateType], [Variant], [VAT_Reg_No], [Workf_var] FROM [STAR].[DIM_T001]
+			dataSource: DemoSAP
+
