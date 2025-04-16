@@ -1,4 +1,4 @@
-[![Analysis Services to PBIP](https://github.com/alisonpezzott/analysis-services-to-pbip/actions/workflows/process.yml/badge.svg)](https://github.com/alisonpezzott/analysis-services-to-pbip/actions/workflows/process.yml)
+[![Analysis Services to PBIP](https://github.com/alisonpezzott/analysis-services-to-pbip/actions/workflows/process.yml/badge.svg?branch=main)](https://github.com/alisonpezzott/analysis-services-to-pbip/actions/workflows/process.yml)
 
 ## Objective
 
