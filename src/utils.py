@@ -54,8 +54,6 @@ def delete_definition_datasources(file_path):
         print(f"An error occurred while deleting the file: {e}")
 
 
-
-
 def clean_definition_model(file_path):
     """
     Reads a .tmdl file and filters its content to keep only lines that start with the allowed keywords.
@@ -105,8 +103,7 @@ def clean_definition_model(file_path):
     return filtered_lines
 
 
-
-def transform_table_file_1500(file_path):
+def transform_table_file_tab_edtr(file_path):
     """
     Transforms the .tmdl file by:
     
@@ -239,9 +236,7 @@ def transform_table_file_1500(file_path):
     return new_content
 
 
-
-
-def process_all_table_files_1500(base_path):
+def process_all_table_files_tab_edtr(base_path):
     """
     Processes all .tmdl files in the 'tables' subfolder located at base_path.
     
@@ -257,14 +252,10 @@ def process_all_table_files_1500(base_path):
     # Process each .tmdl file.
     for file_path in tmdl_files:
         print(f"Processing file: {file_path}")
-        transform_table_file_1500(file_path)  
+        transform_table_file_tab_edtr(file_path)  
 
 
-
-
-
-
-def get_connection_info_1600(output_path, data_source_id):
+def get_connection_info(output_path, data_source_id):
     """
     Extracts the connection information (server and database) for the specified data source
     from the dataSources file.
@@ -290,7 +281,7 @@ def get_connection_info_1600(output_path, data_source_id):
     return None, None
 
 
-def transform_table_file_1600(output_path, file_path, default_database=None):
+def transform_table_file(output_path, file_path, default_database=None):
     """
     Transforms a .tmdl table file with the new format.
 
@@ -320,7 +311,12 @@ def transform_table_file_1600(output_path, file_path, default_database=None):
     """
     with open(file_path, "r", encoding="utf-8") as f:
         lines = f.readlines()
-        
+    
+    # Check if the file is a calculationGroup table and skip processing if so
+    if any(line.strip().startswith("calculationGroup") for line in lines):
+        print(f"'{file_path}' is a calculationGroup table. Skipping...")
+        return "".join(lines)
+
     header_lines = []
     column_mappings = []   # List of tuples (sourceColumn, columnName)
     current_column = None
@@ -384,7 +380,7 @@ def transform_table_file_1600(output_path, file_path, default_database=None):
     server = None
     database = None
     if ds_identifier:
-        server, database = get_connection_info_1600(output_path, ds_identifier)
+        server, database = get_connection_info(output_path, ds_identifier)
     
     # If default_database is provided and database was not found, use default_database
     if default_database and not database:
@@ -426,7 +422,7 @@ def transform_table_file_1600(output_path, file_path, default_database=None):
     return new_content
 
 
-def process_all_table_files_1600(base_path):
+def process_all_table_files(base_path):
     """
     Processes all .tmdl files in the 'tables' subfolder located at base_path.
     
@@ -442,17 +438,7 @@ def process_all_table_files_1600(base_path):
     # Process each .tmdl file.
     for file_path in tmdl_files:
         print(f"Processing file: {file_path}")
-        transform_table_file_1600(base_path, file_path, "None")
-
-
-
-
-
-
-
-
-
-
+        transform_table_file(base_path, file_path, "None")
 
 
 def copy_semanticmodel_directories(input_path, output_path):
@@ -598,7 +584,6 @@ def update_definition_and_platform_in_reports(output_path):
                 print(f"'.platform' not found in {item_path}")
 
 
-
 def get_compatibility_level(item_path):
     """
     Extracts the compatibility level value from the database.tmdl file.
@@ -630,6 +615,21 @@ def get_compatibility_level(item_path):
         return None
 
 
+def is_tabular_editor(item_path):
+    """
+    """
+    with open(f"{item_path}/definition/model.tmdl", "r", encoding="utf-8") as f:
+        lines = f.readlines()
+    
+    # Check if some row starts with "annotation __TEdtr"
+    if any(line.strip().startswith("annotation __TEdtr") for line in lines):
+        print(f"'{item_path}' is a Tabular Editor model.")
+        return True
+    else:
+        print(f"'{item_path}' is not a Tabular Editor model.")
+        return False
+
+
 def process_all_semantic_models(output_path):
     """
     Iterates over every directory in output_path that ends with '.SemanticModel'
@@ -644,13 +644,12 @@ def process_all_semantic_models(output_path):
         if os.path.isdir(item_path) and item.endswith(".SemanticModel"):
             print(f"Processing semantic model: {item_path}")
 
-            if get_compatibility_level(item_path) == 1500:
-                process_all_table_files_1500(item_path)
-            elif get_compatibility_level(item_path) == 1600:
-                process_all_table_files_1600(item_path)
+            if is_tabular_editor(item_path) == True:
+                process_all_table_files_tab_edtr(item_path)
             else:
-                print(f"Unknown compatibility level for {item_path}. Skipping table processing.")
-            
+                process_all_table_files(item_path)
+
             update_database_tmdl(item_path) 
             clean_definition_model(item_path)  
             delete_definition_datasources(item_path)
+

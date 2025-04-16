@@ -1,0 +1,32 @@
+/// SNAPSHOT
+table Snapshot
+
+	column Date
+		dataType: dateTime
+		summarizeBy: none
+		sourceColumn: Date
+
+	column Description
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Description
+
+	column Name
+		dataType: string
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: Name
+
+	/// Snapshot ID
+	column Snapshot
+		dataType: int64
+		isKey
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: SATZ_ID
+
+	partition DIM_Snapshot = query
+		source
+			query = SELECT [SATZ_ID], [Date], [Description], [Name] FROM [STAR].[DIM_Snapshot]
+			dataSource: DemoSAP
+
