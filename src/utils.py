@@ -647,7 +647,7 @@ def process_all_semantic_models(output_path):
             if get_compatibility_level(item_path) == 1500:
                 process_all_table_files_1500(item_path)
             elif get_compatibility_level(item_path) == 1600:
-                process_all_table_files_1600(item_path, item_path)
+                process_all_table_files_1600(item_path)
             else:
                 print(f"Unknown compatibility level for {item_path}. Skipping table processing.")
             
