@@ -27,7 +27,7 @@ jobs:
         run: python src/process.py
 
       - name: List content PBIP Folder
-        run: ls -la PBIP
+        run: ls -la output_pbip
 
       - name: Commit and Push of projects PBIP
         env:
