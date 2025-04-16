@@ -1,0 +1,39 @@
+table DimDate
+
+	column Date
+		dataType: int64
+		sourceProviderType: int
+		sourceColumn: DateKey
+
+	column Day
+		dataType: int64
+		sourceProviderType: tinyint
+		sourceColumn: DayNumberOfMonth
+
+	column MonthName
+		dataType: string
+		sourceProviderType: nvarchar
+		sourceColumn: EnglishMonthName
+		sortByColumn: MonthNumber
+
+	column MonthNumber
+		dataType: int64
+		sourceProviderType: tinyint
+		sourceColumn: MonthNumberOfYear
+
+	column CalendarYear
+		dataType: int64
+		sourceProviderType: smallint
+		sourceColumn: CalendarYear
+
+	partition DimDate = query
+		source
+			query =
+				SELECT
+					*
+				FROM
+					[dbo].[DimDate]
+			dataSource: 'BOOK-PROIJR07F2 AdventureWorksDW-PRD'
+
+		annotation TabularEditor_TableSchema = {"Name":"DimDate","Schema":"dbo","Database":"AdventureWorksDW-PRD","IncludedColumns":["DateKey","FullDateAlternateKey","DayNumberOfWeek","EnglishDayNameOfWeek","SpanishDayNameOfWeek","FrenchDayNameOfWeek","DayNumberOfMonth","DayNumberOfYear","WeekNumberOfYear","EnglishMonthName","SpanishMonthName","FrenchMonthName","MonthNumberOfYear","CalendarQuarter","CalendarYear","CalendarSemester","FiscalQuarter","FiscalYear","FiscalSemester"],"SelectAll":true}
+
