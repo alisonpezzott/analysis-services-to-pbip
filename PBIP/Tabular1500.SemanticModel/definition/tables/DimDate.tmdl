@@ -1,0 +1,32 @@
+table DimDate
+
+	column CalendarYear
+		dataType: int64
+		sourceColumn: CalendarYear
+
+	column Date
+		dataType: int64
+		sourceColumn: DateKey
+
+	column Day
+		dataType: int64
+		sourceColumn: DayNumberOfMonth
+
+	column MonthName
+		dataType: string
+		sourceColumn: EnglishMonthName
+		sortByColumn: MonthNumber
+
+	column MonthNumber
+		dataType: int64
+		sourceColumn: MonthNumberOfYear
+
+
+    partition 'DimDate' = m
+        mode: import
+        source =
+            let
+                Source = Sql.Database("BOOK-PROIJR07F2", "AdventureWorksDW-PRD", [Query = "SELECT [CalendarYear] AS [CalendarYear], [DateKey] AS [Date], [DayNumberOfMonth] AS [Day], [EnglishMonthName] AS [MonthName], [MonthNumberOfYear] AS [MonthNumber] FROM [dbo].[DimDate]", CreateNavigationProperties=false])
+            in
+                Source
+    

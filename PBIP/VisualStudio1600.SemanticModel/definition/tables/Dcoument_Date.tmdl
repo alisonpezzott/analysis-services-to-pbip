@@ -1,0 +1,94 @@
+table Dcoument_Date
+	dataCategory: Time
+
+	column CurrentDate
+		dataType: int64
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: CurrentDate
+
+	column CurrentMonth
+		dataType: int64
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: CurrentMonth
+
+	column CurrentYear
+		dataType: int64
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: CurrentYear
+
+	column Date
+		dataType: dateTime
+		isKey
+		dataCategory: Date
+		summarizeBy: none
+		sourceColumn: Date
+
+	column Day
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Day
+
+	column ISO_Week
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: ISO_Week
+
+	column LongDate
+		dataType: string
+		summarizeBy: none
+		sourceColumn: LongDate
+
+	column Month
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Month
+
+	column PrevMonth
+		dataType: int64
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: PrevMonth
+
+	/// Calendar ID
+	column Calendar
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: SATZ_ID
+
+	column ShortDate
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ShortDate
+
+	column VeryShortDate
+		dataType: string
+		summarizeBy: none
+		sourceColumn: VeryShortDate
+
+	column Week
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Week
+
+	column Weekday
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Weekday
+
+	column Year
+		dataType: int64
+		summarizeBy: none
+		sourceColumn: Year
+
+
+    partition 'Dcoument_Date' = m
+        mode: import
+        source =
+            let
+                Source = Sql.Database("DESKTOP-7QLGMPF\LAINOBORGO", "DemoSAP", [Query = "SELECT [CurrentDate] AS [CurrentDate], [CurrentMonth] AS [CurrentMonth], [CurrentYear] AS [CurrentYear], [Date] AS [Date], [Day] AS [Day], [ISO_Week] AS [ISO_Week], [LongDate] AS [LongDate], [Month] AS [Month], [PrevMonth] AS [PrevMonth], [SATZ_ID] AS [Calendar], [ShortDate] AS [ShortDate], [VeryShortDate] AS [VeryShortDate], [Week] AS [Week], [Weekday] AS [Weekday], [Year] AS [Year] FROM [STAR].[Dcoument_Date]", CreateNavigationProperties=false])
+            in
+                Source
+    
