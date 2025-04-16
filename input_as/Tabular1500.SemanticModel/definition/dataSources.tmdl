@@ -1,0 +1,5 @@
+dataSource 'BOOK-PROIJR07F2 AdventureWorksDW-PRD' = provider
+	connectionString: data source=BOOK-PROIJR07F2;initial catalog=AdventureWorksDW-PRD;user id=fabric
+	impersonationMode: impersonateServiceAccount
+	provider: System.Data.SqlClient
+
