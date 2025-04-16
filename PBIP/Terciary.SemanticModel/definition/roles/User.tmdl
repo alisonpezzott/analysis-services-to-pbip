@@ -1,0 +1,5 @@
+role User
+	modelPermission: read
+
+	tablePermission DimCustomer = [FirstName] = USERPRINCIPALNAME()
+
