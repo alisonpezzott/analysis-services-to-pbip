@@ -1,3 +1,0 @@
-role Admin
-	modelPermission: read
-
