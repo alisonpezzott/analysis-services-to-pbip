@@ -1,0 +1,864 @@
+/// Vendor Master (General Section)
+table Vendor
+
+	/// Vendor account group
+	column Acct_Group
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Acct_Group
+
+	/// Address
+	column Address
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Address
+
+	/// Agency Location Code
+	column ALC
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ALC
+
+	/// Account Number of the Alternative Payee
+	column Alt__payee
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Alt__payee
+
+	/// Indicator: Alternative payee using account number
+	column AltPayeeAc
+		dataType: string
+		summarizeBy: none
+		sourceColumn: AltPayeeAc
+
+	/// Authorization Group
+	column Authoriz
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Authoriz
+
+	/// Date of birth of the person subject to withholding tax
+	column Birth_date
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Birth_date
+
+	/// Place of birth of the person subject to withholding tax
+	column Birthplace
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Birthplace
+
+	/// Function That Will Be Blocked
+	column Block_func
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Block_func
+
+	/// Factory calendar key
+	column Calendar
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Calendar
+
+	/// Capital Amount
+	column Capital
+		dataType: decimal
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: Capital
+
+	/// Forwarding agent freight group
+	column CarFrgtGrp
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CarFrgtGrp
+
+	/// Carrier confirmation is expected
+	column Carrier_cf
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Carrier_cf
+
+	/// Check digit for the international location number
+	column Chk_digit
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Chk_digit
+
+	/// Search term for matchcode search
+	column City
+		dataType: string
+		summarizeBy: none
+		sourceColumn: City
+
+	/// City
+	column City1
+		dataType: string
+		summarizeBy: none
+		sourceColumn: City1
+
+	/// Client
+	column Client
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Client
+
+	/// CNAE
+	column CNAE
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CNAE
+
+	/// Cross Docking: Relevant for Collective Numbering
+	column Coll_No
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Coll_No
+
+	/// Company Size
+	column Comp_Size
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Comp_Size
+
+	/// Date on Which the Changes Were Confirmed
+	column Conf_date
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Conf_date
+
+	/// Status of Change Authorization (Central)
+	column Conf_St
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Conf_St
+
+	/// Time of Last Change Confirmation
+	column Conf_time
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Conf_time
+
+	/// Country Key
+	column Country
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Country
+
+	/// CRC number
+	column CRC_number
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CRC_number
+
+	/// Date on which the Record Was Created
+	column Creat_date
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Creat_date
+
+	/// Name of Person who Created the Object
+	column Created_by
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Created_by
+
+	/// CRT Number
+	column CRT_Number
+		dataType: string
+		summarizeBy: none
+		sourceColumn: CRT_Number
+
+	/// Currency
+	column Currency
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Currency
+
+	/// Customer Number
+	column Customer
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Customer
+
+	/// LFA1: End of validity period
+	column Vendor_ValidTo
+		dataType: dateTime
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: DAT_BIS_HIST
+
+	/// LFA1: Start of validity period
+	column Vendor_ValidFrom
+		dataType: dateTime
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: DAT_VON_HIST
+
+	/// Data communication line no.
+	column Data_line
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Data_line
+
+	/// Declaration Regimen for PIS/COFINS
+	column Decl__Reg
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Decl__Reg
+
+	/// Central deletion block for master record
+	column Del_block
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Del_block
+
+	/// Central Deletion Flag for Master Record
+	column Del_flag
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Del_flag
+
+	/// District
+	column District
+		dataType: string
+		summarizeBy: none
+		sourceColumn: District
+
+	/// Indicator for Data Medium Exchange
+	column DME_Ind
+		dataType: string
+		summarizeBy: none
+		sourceColumn: DME_Ind
+
+	/// Indicator: Business Partner Subject to Equalization Tax?
+	column Equal_tax
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Equal_tax
+
+	/// External manufacturer code name or number
+	column Ex__manuf
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Ex__manuf
+
+	/// Fax Number
+	column Fax_Number
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Fax_Number
+
+	/// First Name
+	column First_Name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: First_Name
+
+	/// Account number of the master record with fiscal address
+	column Fisc_addr
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Fisc_addr
+
+	/// Foreign National Registration
+	column ForNatReg
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ForNatReg
+
+	/// Group key
+	column Group
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Group
+
+	/// House number: is no longer used from Release 4.6B
+	column House_no
+		dataType: string
+		summarizeBy: none
+		sourceColumn: House_no
+
+	/// ICMS Taxpayer
+	column ICMS_Taxp
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ICMS_Taxp
+
+	/// Industry key
+	column Industry
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Industry
+
+	/// Industry Main Type
+	column Industry1
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Industry1
+
+	/// Credit information number
+	column Info
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Info
+
+	/// Instruction key for data medium exchange
+	column Instr_key
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Instr_key
+
+	/// ISR Subscriber Number
+	column ISR_No
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ISR_No
+
+	/// Issued by
+	column Issued_by
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Issued_by
+
+	/// Language Key
+	column Language
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Language
+
+	/// Legal Nature
+	column Legal_Nat
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Legal_Nat
+
+	/// International location number  (part 1)
+	column Loc_no__1
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Loc_no__1
+
+	/// International location number (Part 2)
+	column Loc_no__2
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Loc_no__2
+
+	/// Last review (external)
+	column Lst_review
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Lst_review
+
+	/// Micro company indicator
+	column Micro_Comp
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Micro_Comp
+
+	/// Search term for matchcode search
+	column Name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Name
+
+	/// Search term for matchcode search
+	column Name_2
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Name_2
+
+	/// Name 2
+	column Name_21
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Name_21
+
+	/// Name 2
+	column Name_22
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Name_22
+
+	/// Name 3
+	column Name_3
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Name_3
+
+	/// Name 3
+	column Name_31
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Name_31
+
+	/// Name 4
+	column Name_4
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Name_4
+
+	/// Name 1
+	column Name1
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Name1
+
+	/// Name 1
+	column Name2
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Name2
+
+	/// Natural Person
+	column Nat_Person
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Nat_Person
+
+	/// Indicator: Is the account a one-time account?
+	column One-time
+		dataType: string
+		summarizeBy: none
+		sourceColumn: One-time
+
+	/// PO Box city
+	column P_O_Bx_cty
+		dataType: string
+		summarizeBy: none
+		sourceColumn: P_O_Bx_cty
+
+	/// Indicator: Alternative payee in document allowed ?
+	column Payee_i_dc
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Payee_i_dc
+
+	/// Plant (Own or External)
+	column Plant
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Plant
+
+	/// Indicator: plant level relevant
+	column Plant_rel
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Plant_rel
+
+	/// Payment Block
+	column Pmnt_block
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Pmnt_block
+
+	/// Payment Office
+	column Pmt_Off
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Pmt_Off
+
+	/// PO Box
+	column PO_Box
+		dataType: string
+		summarizeBy: none
+		sourceColumn: PO_Box
+
+	/// P.O. Box Postal Code
+	column PO_Box_pcd
+		dataType: string
+		summarizeBy: none
+		sourceColumn: PO_Box_pcd
+
+	/// Vendor indicator relevant for proof of delivery
+	column POD-rel
+		dataType: string
+		summarizeBy: none
+		sourceColumn: POD-rel
+
+	/// Postal Code
+	column Post_Code
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Post_Code
+
+	/// Vendor is PPA relevant
+	column PPA_Relev
+		dataType: string
+		summarizeBy: none
+		sourceColumn: PPA_Relev
+
+	/// Processor group
+	column Process_gp
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Process_gp
+
+	/// Profession
+	column Profession
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Profession
+
+	/// Central posting block
+	column PstBlock
+		dataType: string
+		summarizeBy: none
+		sourceColumn: PstBlock
+
+	/// Centrally imposed purchasing block
+	column Pur__block
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Pur__block
+
+	/// Vendor's QM system
+	column QM_system
+		dataType: string
+		summarizeBy: none
+		sourceColumn: QM_system
+
+	/// Reference Account Group for One-Time Account (Vendor)
+	column Ref_ActGr
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Ref_ActGr
+
+	/// Region (State, Province, County)
+	column Region
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Region
+
+	/// Name of Representative
+	column Rep_s_Name
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Rep_s_Name
+
+	/// RG Issue Date
+	column RG_IssueDt
+		dataType: string
+		summarizeBy: none
+		sourceColumn: RG_IssueDt
+
+	/// RG Number
+	column RG_Number
+		dataType: string
+		summarizeBy: none
+		sourceColumn: RG_Number
+
+	/// RIC Number
+	column RIC_Number
+		dataType: string
+		summarizeBy: none
+		sourceColumn: RIC_Number
+
+	/// RNE Issue Date
+	column RNE_Issue
+		dataType: string
+		summarizeBy: none
+		sourceColumn: RNE_Issue
+
+	/// Service agent procedure group
+	column SA_group
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SA_group
+
+	/// ISNULL([T1].[SATZ_ID], 0)
+	column Vendor
+		dataType: int64
+		isKey
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: SATZ_ID
+
+	/// Standard carrier access code
+	column SCAC
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SCAC
+
+	/// Scheduling Procedure
+	column Scheduling
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Scheduling
+
+	/// Sort field
+	column SearchTerm
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SearchTerm
+
+	/// Key for the Sex of the Person Subject to Withholding Tax
+	column Sex
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Sex
+
+	/// Activity Code for Social Insurance
+	column SI_Code
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SI_Code
+
+	/// Subledger acct preprocessing procedure
+	column SLA_PreprP
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SLA_PreprP
+
+	/// Registered for Social Insurance
+	column Soc__Ins
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Soc__Ins
+
+	/// Shipment: statistics group, transportation service agent
+	column St_grp_ag
+		dataType: string
+		summarizeBy: none
+		sourceColumn: St_grp_ag
+
+	/// State
+	column State
+		dataType: string
+		summarizeBy: none
+		sourceColumn: State
+
+	/// Status of Data Transfer into Subsequent Release
+	column Status
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Status
+
+	/// Staging Time in Days
+	column Stg_Time
+		dataType: decimal
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: Stg_Time
+
+	/// Street: No longer used from Release 4.6B
+	column Street
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Street
+
+	/// House number and street
+	column Street1
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Street1
+
+	/// Tax Base in Percentage
+	column Tax_base
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tax_base
+
+	/// Tax Declaration Type
+	column Tax_Dec_Ty
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tax_Dec_Ty
+
+	/// Tax Jurisdiction
+	column Tax_Jur
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tax_Jur
+
+	/// Tax Number at Responsible Tax Authority
+	column Tax_no
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tax_no
+
+	/// Tax Number 1
+	column Tax_No__1
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tax_No__1
+
+	/// Tax Number 2
+	column Tax_No__2
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tax_No__2
+
+	/// Tax Number 3
+	column Tax_No__3
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tax_No__3
+
+	/// Tax Number 4
+	column Tax_No__4
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tax_No__4
+
+	/// Tax Number 5
+	column Tax_No__5
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tax_No__5
+
+	/// Tax Number Type
+	column Tax_no_ty
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tax_no_ty
+
+	/// Account Number of Master Record of Tax Office Responsible
+	column Tax_Office
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tax_Office
+
+	/// Tax Split
+	column Tax_split
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tax_split
+
+	/// Tax type
+	column Tax_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tax_type
+
+	/// Telebox number
+	column Telebox
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Telebox
+
+	/// First telephone number
+	column Telephone1
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Telephone1
+
+	/// Second telephone number
+	column Telephone2
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Telephone2
+
+	/// Teletex number
+	column Teletex
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Teletex
+
+	/// Telex number
+	column Telex
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Telex
+
+	/// Terms of Liability
+	column Terms_Liab
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Terms_Liab
+
+	/// Title
+	column Title
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Title
+
+	/// Title
+	column Title1
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Title1
+
+	/// Type of Business
+	column TOB
+		dataType: string
+		summarizeBy: none
+		sourceColumn: TOB
+
+	/// Type of Industry
+	column TOI
+		dataType: string
+		summarizeBy: none
+		sourceColumn: TOI
+
+	/// Company ID of trading partner
+	column Tradg_Part
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Tradg_Part
+
+	/// Train station
+	column Train_stat
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Train_stat
+
+	/// Transportation Chain
+	column TrChain
+		dataType: string
+		summarizeBy: none
+		sourceColumn: TrChain
+
+	/// Uniform Resource Locator
+	column URL
+		dataType: string
+		summarizeBy: none
+		sourceColumn: URL
+
+	/// Validity date of certification
+	column Valid_to
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Valid_to
+
+	/// Liable for VAT
+	column VAT
+		dataType: string
+		summarizeBy: none
+		sourceColumn: VAT
+
+	/// VAT Registration Number
+	column VAT_Reg_No
+		dataType: string
+		summarizeBy: none
+		sourceColumn: VAT_Reg_No
+
+	/// Account Number of Vendor or Creditor
+	column Vendor1
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Vendor
+
+	/// Indicator: vendor sub-range relevant
+	column VSR
+		dataType: string
+		summarizeBy: none
+		sourceColumn: VSR
+
+	/// Transportation zone to or from which the goods are delivered
+	column Zone
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Zone
+
+
+    partition 'Vendor' = m
+        mode: import
+        source =
+            let
+                Source = Sql.Database("DESKTOP-7QLGMPF\LAINOBORGO", "DemoSAP", [Query = "SELECT [Acct_Group] AS [Acct_Group], [Address] AS [Address], [ALC] AS [ALC], [Alt__payee] AS [Alt__payee], [AltPayeeAc] AS [AltPayeeAc], [Authoriz] AS [Authoriz], [Birth_date] AS [Birth_date], [Birthplace] AS [Birthplace], [Block_func] AS [Block_func], [Calendar] AS [Calendar], [Capital] AS [Capital], [CarFrgtGrp] AS [CarFrgtGrp], [Carrier_cf] AS [Carrier_cf], [Chk_digit] AS [Chk_digit], [City] AS [City], [City1] AS [City1], [Client] AS [Client], [CNAE] AS [CNAE], [Coll_No] AS [Coll_No], [Comp_Size] AS [Comp_Size], [Conf_date] AS [Conf_date], [Conf_St] AS [Conf_St], [Conf_time] AS [Conf_time], [Country] AS [Country], [CRC_number] AS [CRC_number], [Creat_date] AS [Creat_date], [Created_by] AS [Created_by], [CRT_Number] AS [CRT_Number], [Currency] AS [Currency], [Customer] AS [Customer], [DAT_BIS_HIST] AS [Vendor_ValidTo], [DAT_VON_HIST] AS [Vendor_ValidFrom], [Data_line] AS [Data_line], [Decl__Reg] AS [Decl__Reg], [Del_block] AS [Del_block], [Del_flag] AS [Del_flag], [District] AS [District], [DME_Ind] AS [DME_Ind], [Equal_tax] AS [Equal_tax], [Ex__manuf] AS [Ex__manuf], [Fax_Number] AS [Fax_Number], [First_Name] AS [First_Name], [Fisc_addr] AS [Fisc_addr], [ForNatReg] AS [ForNatReg], [Group] AS [Group], [House_no] AS [House_no], [ICMS_Taxp] AS [ICMS_Taxp], [Industry] AS [Industry], [Industry1] AS [Industry1], [Info] AS [Info], [Instr_key] AS [Instr_key], [ISR_No] AS [ISR_No], [Issued_by] AS [Issued_by], [Language] AS [Language], [Legal_Nat] AS [Legal_Nat], [Loc_no__1] AS [Loc_no__1], [Loc_no__2] AS [Loc_no__2], [Lst_review] AS [Lst_review], [Micro_Comp] AS [Micro_Comp], [Name] AS [Name], [Name_2] AS [Name_2], [Name_21] AS [Name_21], [Name_22] AS [Name_22], [Name_3] AS [Name_3], [Name_31] AS [Name_31], [Name_4] AS [Name_4], [Name1] AS [Name1], [Name2] AS [Name2], [Nat_Person] AS [Nat_Person], [One] AS [One-time], [P_O_Bx_cty] AS [P_O_Bx_cty], [Payee_i_dc] AS [Payee_i_dc], [Plant] AS [Plant], [Plant_rel] AS [Plant_rel], [Pmnt_block] AS [Pmnt_block], [Pmt_Off] AS [Pmt_Off], [PO_Box] AS [PO_Box], [PO_Box_pcd] AS [PO_Box_pcd], [POD] AS [POD-rel], [Post_Code] AS [Post_Code], [PPA_Relev] AS [PPA_Relev], [Process_gp] AS [Process_gp], [Profession] AS [Profession], [PstBlock] AS [PstBlock], [Pur__block] AS [Pur__block], [QM_system] AS [QM_system], [Ref_ActGr] AS [Ref_ActGr], [Region] AS [Region], [Rep_s_Name] AS [Rep_s_Name], [RG_IssueDt] AS [RG_IssueDt], [RG_Number] AS [RG_Number], [RIC_Number] AS [RIC_Number], [RNE_Issue] AS [RNE_Issue], [SA_group] AS [SA_group], [SATZ_ID] AS [Vendor], [SCAC] AS [SCAC], [Scheduling] AS [Scheduling], [SearchTerm] AS [SearchTerm], [Sex] AS [Sex], [SI_Code] AS [SI_Code], [SLA_PreprP] AS [SLA_PreprP], [Soc__Ins] AS [Soc__Ins], [St_grp_ag] AS [St_grp_ag], [State] AS [State], [Status] AS [Status], [Stg_Time] AS [Stg_Time], [Street] AS [Street], [Street1] AS [Street1], [Tax_base] AS [Tax_base], [Tax_Dec_Ty] AS [Tax_Dec_Ty], [Tax_Jur] AS [Tax_Jur], [Tax_no] AS [Tax_no], [Tax_No__1] AS [Tax_No__1], [Tax_No__2] AS [Tax_No__2], [Tax_No__3] AS [Tax_No__3], [Tax_No__4] AS [Tax_No__4], [Tax_No__5] AS [Tax_No__5], [Tax_no_ty] AS [Tax_no_ty], [Tax_Office] AS [Tax_Office], [Tax_split] AS [Tax_split], [Tax_type] AS [Tax_type], [Telebox] AS [Telebox], [Telephone1] AS [Telephone1], [Telephone2] AS [Telephone2], [Teletex] AS [Teletex], [Telex] AS [Telex], [Terms_Liab] AS [Terms_Liab], [Title] AS [Title], [Title1] AS [Title1], [TOB] AS [TOB], [TOI] AS [TOI], [Tradg_Part] AS [Tradg_Part], [Train_stat] AS [Train_stat], [TrChain] AS [TrChain], [URL] AS [URL], [Valid_to] AS [Valid_to], [VAT] AS [VAT], [VAT_Reg_No] AS [VAT_Reg_No], [Vendor] AS [Vendor1], [VSR] AS [VSR], [Zone] AS [Zone] FROM [STAR].[Vendor]", CreateNavigationProperties=false])
+            in
+                Source
+    
