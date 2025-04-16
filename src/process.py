@@ -3,11 +3,9 @@ from utils import *
 
 # Constants for input and output paths
 # These paths should be set according to your directory structure
-input_path = "workspace"
-output_path = "PBIP"
+input_path = "input_as"
+output_path = "output_pbip"
 default_report_path = "src/Default.Report"
-
-
 
 if __name__ == "__main__":
     # Ensure the output path exists

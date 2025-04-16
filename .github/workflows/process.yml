@@ -38,7 +38,7 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
           # Add the files to the staging area
-          git add PBIP/*
+          git add output_pbip/*
           
           # Check if there are changes to commit
           if git diff-index --quiet HEAD; then
