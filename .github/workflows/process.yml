@@ -1,4 +1,4 @@
-name: Convert AS Models to PBIP
+name: Analysis Services to PBIP
 
 on:
   push:
