@@ -10,21 +10,19 @@ Map the structure of a semantic model resulting from the deployment of Analysis 
 ```
 .
 ├──── workspace                    -- Analysis Services Semantic Models
-│     ├ Primary.SemanticModel
-│     ├ Secondary.SemanticModel
-│     └ Terciary.SemanticModel
+│     ├ Sample_1500.SemanticModel
+│     └ Sample_1600.SemanticModel
 │ 
 ├──── src.md                       
 │     ├ Default.Report              -- Blank Report to open in PBI Desktop
-│     └ process.py                  -- The code
+│     ├ utils.py                    -- Code parts to compose the main script
+│     └ process.py                  -- The main code
 │
 ├──── PBIP                          -- Projects folder output of conversion
-│     ├ Primary.SemanticModel
-│     ├ Primary.Report
-│     ├ Secondary.SemanticModel
-│     ├ Secondary.Report
-│     ├ Terciary.SemanticModel
-│     └ Terciary.Report
+│     ├ Sample_1500.SemanticModel
+│     ├ Sample_1500.Report
+│     ├ Sample_1600.SemanticModel
+│     └ Sample_1600.Report
 │
 ├──── .gitignore                    -- Ensure not version of data
 └──── README.md                     -- Guidelines
@@ -41,7 +39,7 @@ Map the structure of a semantic model resulting from the deployment of Analysis 
 
 ## Diff by file  
 
-Abaixo vemos as diferenças dos modelos semânticos e a lógica para tratar cada arquivo para chegar ao objetivo.  
+Below we see the differences between the semantic models and the logic to handle each file to achieve the objective.  
 
 
 ### .platform
