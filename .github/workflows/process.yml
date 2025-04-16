@@ -1,0 +1,50 @@
+name: Convert AS Models to PBIP
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  run-process:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Repo Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false  # Need to use the custom token
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12'
+
+      - name: Exec the process
+        run: python src/process.py
+
+      - name: List content PBIP Folder
+        run: ls -la PBIP
+
+      - name: Commit and Push of projects PBIP
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Set up the bot user for commit
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Add the files to the staging area
+          git add PBIP/*
+          
+          # Check if there are changes to commit
+          if git diff-index --quiet HEAD; then
+            echo "Any changes to commit."
+          else
+            git commit -m "Update PBIP Projects"
+            # Push the changes to the repository
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }}
+          fi
