@@ -1,0 +1,268 @@
+/// Document Types
+table DocTypes
+
+	/// Account Types Allowed
+	column Account_types
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Account_types
+
+	/// Indicator: Document type allowed for actual allocation
+	column Act_alloc
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Act_alloc
+
+	/// Accounting Principle Assignment Is Unique in Document
+	column APs_Unique
+		dataType: string
+		summarizeBy: none
+		sourceColumn: APs_Unique
+
+	/// Indicator: Are postings to assets permitted?
+	column Assets
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Assets
+
+	/// Authorization Group
+	column Authoriz
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Authoriz
+
+	/// Indicator: Document type can only be used in batch input
+	column Btch_input_only
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Btch_input_only
+
+	/// Indicator: Only one customer/vendor allowed
+	column C_V_check
+		dataType: string
+		summarizeBy: none
+		sourceColumn: C_V_check
+
+	/// Check Posting Date when Issuing Official Document Number
+	column Check_date
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Check_date
+
+	/// Client
+	column Client
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Client
+
+	/// Indicator: Are postings to customer permitted?
+	column Customer
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Customer
+
+	/// T003: End of validity period
+	column DocTypes_ValidTo
+		dataType: dateTime
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: DAT_BIS_HIST
+
+	/// T003: Start of validity period
+	column DocTypes_ValidFrom
+		dataType: dateTime
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: DAT_VON_HIST
+
+	/// Document Type Description
+	column Description
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Description
+
+	/// Document Class
+	column Doc__Class
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Doc__Class
+
+	/// Document Type
+	column Doc_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Doc_type
+
+	/// Indicator: Document header text
+	column Document_header_text
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Document_header_text
+
+	/// Debit Recovery Indicator
+	column DR_Rec_Ind
+		dataType: string
+		summarizeBy: none
+		sourceColumn: DR_Rec_Ind
+
+	/// Indicator: Trading partner can be entered manually
+	column Enter_trading_part
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Enter_trading_part
+
+	/// Indicator: Exchange rate diffs partial payments by period
+	column ER_dif_pp
+		dataType: string
+		summarizeBy: none
+		sourceColumn: ER_dif_pp
+
+	/// Exch.Rate Type for Determining the Proposed Rate
+	column Ex_rate_type_for_forgn_crncy_docs
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Ex_rate_type_for_forgn_crncy_docs
+
+	/// Indicator: Document type for posting subsequent adjustment
+	column For_subseq_adjustmnt
+		dataType: string
+		summarizeBy: none
+		sourceColumn: For_subseq_adjustmnt
+
+	/// Indicator: Are postings to G/L account permitted?
+	column G_L_acct
+		dataType: string
+		summarizeBy: none
+		sourceColumn: G_L_acct
+
+	/// Indicator: Document type for initial account assignment ?
+	column Init_acct_assignment
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Init_acct_assignment
+
+	/// Inter-company posting
+	column Inter-company_postgs
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Inter-company_postgs
+
+	/// Indicator: Are postings to material account permitted?
+	column Material
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Material
+
+	/// Indicator: Market Data Exchange Rate
+	column MDExchRate
+		dataType: string
+		summarizeBy: none
+		sourceColumn: MDExchRate
+
+	/// Indicator: Negative Postings Permitted
+	column Negative_Postings_Permitted
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Negative_Postings_Permitted
+
+	/// Indicator: Document posted net ?
+	column Net_document_type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Net_document_type
+
+	/// Number range
+	column Number_rng
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Number_rng
+
+	/// Document Type Relevant for Official Numbering
+	column Off__num
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Off__num
+
+	/// Indicator: Document type allowed for planning
+	column Planning
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Planning
+
+	/// Indicator: Document type allowed for plan allocation
+	column Pln_alloc
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Pln_alloc
+
+	/// Indicator: Allow Posting to Position or Equivalent Accounts
+	column Pos__Accts
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Pos__Accts
+
+	/// Recovery Indicator Credit
+	column Rec_Ind_CR
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Rec_Ind_CR
+
+	/// Indicator: Reference number
+	column Reference_number
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Reference_number
+
+	/// Long Invoice Reference Required
+	column Rfrnc_requ
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Rfrnc_requ
+
+	/// Indicator: Document type allowed for rollup
+	column Rollup
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Rollup
+
+	/// Indicator: Posting from SAP billing document ?
+	column SAP_bill_doc
+		dataType: string
+		summarizeBy: none
+		sourceColumn: SAP_bill_doc
+
+	/// ISNULL([T1].[SATZ_ID], 0)
+	column DocTypes
+		dataType: int64
+		isKey
+		isNullable: false
+		summarizeBy: none
+		sourceColumn: SATZ_ID
+
+	/// Self-Issued Document
+	column Self-iss
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Self-iss
+
+	/// Document Type
+	column Type
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Type
+
+	/// Indicator: Are postings to vendor permitted?
+	column Vendor
+		dataType: string
+		summarizeBy: none
+		sourceColumn: Vendor
+
+
+    partition 'DocTypes' = m
+        mode: import
+        source =
+            let
+                Source = Sql.Database("DESKTOP-7QLGMPF\LAINOBORGO", "DemoSAP", [Query = "SELECT [Account_types] AS [Account_types], [Act_alloc] AS [Act_alloc], [APs_Unique] AS [APs_Unique], [Assets] AS [Assets], [Authoriz] AS [Authoriz], [Btch_input_only] AS [Btch_input_only], [C_V_check] AS [C_V_check], [Check_date] AS [Check_date], [Client] AS [Client], [Customer] AS [Customer], [DAT_BIS_HIST] AS [DocTypes_ValidTo], [DAT_VON_HIST] AS [DocTypes_ValidFrom], [Description] AS [Description], [Doc__Class] AS [Doc__Class], [Doc_type] AS [Doc_type], [Document_header_text] AS [Document_header_text], [DR_Rec_Ind] AS [DR_Rec_Ind], [Enter_trading_part] AS [Enter_trading_part], [ER_dif_pp] AS [ER_dif_pp], [Ex_rate_type_for_forgn_crncy_docs] AS [Ex_rate_type_for_forgn_crncy_docs], [For_subseq_adjustmnt] AS [For_subseq_adjustmnt], [G_L_acct] AS [G_L_acct], [Init_acct_assignment] AS [Init_acct_assignment], [Inter] AS [Inter-company_postgs], [Material] AS [Material], [MDExchRate] AS [MDExchRate], [Negative_Postings_Permitted] AS [Negative_Postings_Permitted], [Net_document_type] AS [Net_document_type], [Number_rng] AS [Number_rng], [Off__num] AS [Off__num], [Planning] AS [Planning], [Pln_alloc] AS [Pln_alloc], [Pos__Accts] AS [Pos__Accts], [Rec_Ind_CR] AS [Rec_Ind_CR], [Reference_number] AS [Reference_number], [Rfrnc_requ] AS [Rfrnc_requ], [Rollup] AS [Rollup], [SAP_bill_doc] AS [SAP_bill_doc], [SATZ_ID] AS [DocTypes], [Self] AS [Self-iss], [Type] AS [Type], [Vendor] AS [Vendor] FROM [STAR].[DocTypes]", CreateNavigationProperties=false])
+            in
+                Source
+    
