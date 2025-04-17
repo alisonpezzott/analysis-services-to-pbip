@@ -1,0 +1,49 @@
+table FactSales
+
+	measure 'Sales Amount' =
+			SUMX (
+			    'FactSales',
+			    'FactSales'[UnitPrice] * 'FactSales'[OrderQuantity]
+			)
+
+	column SalesOrderNumber
+		dataType: string
+		sourceProviderType: nvarchar
+		sourceColumn: SalesOrderNumber
+
+	column CustomerKey
+		dataType: int64
+		sourceProviderType: int
+		sourceColumn: CustomerKey
+
+	column ProductKey
+		dataType: int64
+		sourceProviderType: int
+		sourceColumn: ProductKey
+
+	column OrderDateKey
+		dataType: int64
+		sourceProviderType: int
+		sourceColumn: OrderDateKey
+
+	column OrderQuantity
+		dataType: int64
+		sourceProviderType: smallint
+		sourceColumn: OrderQuantity
+
+	column UnitPrice
+		dataType: decimal
+		sourceProviderType: money
+		sourceColumn: UnitPrice
+
+	partition vFactSales = query
+		source
+			query =
+				SELECT
+					*
+				FROM
+					[dbo].[vFactSales]
+			dataSource: 'BOOK-PROIJR07F2 AdventureWorksDW-PRD'
+
+		annotation TabularEditor_TableSchema = {"Name":"vFactSales","Schema":"dbo","Database":"AdventureWorksDW-PRD","IncludedColumns":["Channel","SalesOrderKey","SalesOrderLineKey","SalesOrderNumber","SalesOrderLineNumber","ResellerKey","CustomerKey","ProductKey","OrderDateKey","DueDateKey","ShipDateKey","PromotionKey","CurrencyKey","SalesTerritoryKey","EmployeeKey","OrderQuantity","UnitPrice","ExtendedAmount","UnitPriceDiscountPct","DiscountAmount","ProductStandardCost","TotalProductCost","SalesAmount","TaxAmt","Freight","CarrierTrackingNumber","CustomerPONumber","RevisionNumber"],"SelectAll":true}
+
